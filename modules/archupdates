@@ -19,7 +19,9 @@ get_updates()
 
     updates=$(("$updates_arch" + "$updates_aur"))
 
-    echo "$PREFIX$updates"
+    if [ $updates != "0" ]; then
+	echo "$PREFIX$updates"
+    fi
 }
 
 if [ $(( 10#$(date '+%M') % 3 )) -eq 0 ] && [ $(( 10#$(date '+%S') )) -eq 5 ]; then
